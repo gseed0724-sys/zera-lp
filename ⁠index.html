@@ -3,13 +3,414 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>便利屋スタイル</title>
+    <title>便利屋スタイル | 前橋市・高崎市の身の回りのお困りごと解決</title>
+    <meta name="description" content="群馬県前橋市・高崎市を中心に、お庭の草刈り、家具移動、エアコン掃除、水回り交換など暮らしの「困った」を迅速解決！お気軽にご相談ください。">
+    <style>
+        :root {
+            --primary-color: #2e7d32;
+            --accent-color: #ff9800;
+            --line-color: #06c755;
+            --bg-light: #f8f9fa;
+            --text-color: #333333;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+        }
+
+        body {
+            color: var(--text-color);
+            background-color: #ffffff;
+            line-height: 1.6;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 0 16px;
+        }
+
+        section {
+            padding: 40px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            margin-bottom: 24px;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 50px;
+            height: 3px;
+            background-color: var(--primary-color);
+            margin: 8px auto 0;
+            border-radius: 2px;
+        }
+
+        header {
+            background-color: #ffffff;
+            padding: 12px 0;
+            border-bottom: 1px solid #eeeeee;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.25rem;
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+
+        .area-tag {
+            font-size: 0.75rem;
+            background-color: #e8f5e9;
+            color: var(--primary-color);
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-weight: bold;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
+            padding: 36px 16px;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 1.6rem;
+            line-height: 1.4;
+            color: #1b5e20;
+            margin-bottom: 12px;
+        }
+
+        .hero p {
+            font-size: 0.95rem;
+            margin-bottom: 20px;
+            color: #2e7d32;
+        }
+
+        .hero-badges {
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+            flex-wrap: wrap;
+            margin-bottom: 24px;
+        }
+
+        .badge {
+            background: #ffffff;
+            color: #1b5e20;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+
+        .cta-box {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-top: 16px;
+        }
+
+        .btn-line {
+            background-color: var(--line-color);
+            color: #ffffff;
+            text-decoration: none;
+            padding: 14px;
+            border-radius: 8px;
+            font-weight: bold;
+            font-size: 1.1rem;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(6, 199, 85, 0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        .features {
+            background-color: #ffffff;
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 16px;
+        }
+
+        .feature-card {
+            border: 1px solid #e0e0e0;
+            padding: 16px;
+            border-radius: 8px;
+            background: #ffffff;
+        }
+
+        .feature-card h3 {
+            font-size: 1.1rem;
+            color: var(--primary-color);
+            margin-bottom: 6px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .services {
+            background-color: var(--bg-light);
+        }
+
+        .service-list {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+        }
+
+        .service-item {
+            background: #ffffff;
+            padding: 16px;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+
+        .service-icon {
+            font-size: 2rem;
+            margin-bottom: 8px;
+        }
+
+        .service-item h3 {
+            font-size: 0.95rem;
+            margin-bottom: 4px;
+        }
+
+        .service-item p {
+            font-size: 0.75rem;
+            color: #666666;
+        }
+
+        .pricing-table {
+            width: 100%;
+            border-collapse: collapse;
+            background: #ffffff;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+
+        .pricing-table th, .pricing-table td {
+            padding: 12px 16px;
+            text-align: left;
+            border-bottom: 1px solid #eeeeee;
+            font-size: 0.9rem;
+        }
+
+        .pricing-table th {
+            background-color: #e8f5e9;
+            color: var(--primary-color);
+            width: 55%;
+        }
+
+        .price-note {
+            font-size: 0.75rem;
+            color: #666666;
+            margin-top: 8px;
+        }
+
+        .area-box {
+            background: #ffffff;
+            border: 2px dashed var(--primary-color);
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .area-box h3 {
+            color: var(--primary-color);
+            margin-bottom: 8px;
+        }
+
+        .fixed-cta {
+            position: sticky;
+            bottom: 0;
+            background: rgba(255, 255, 255, 0.95);
+            padding: 12px 16px;
+            border-top: 1px solid #dddddd;
+            box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
+        }
+
+        footer {
+            background-color: #333333;
+            color: #ffffff;
+            text-align: center;
+            padding: 20px 16px 60px;
+            font-size: 0.75rem;
+        }
+    </style>
 </head>
-<body style="background-color: #e8f5e9; text-align: center; padding: 50px 20px; font-family: sans-serif;">
-    <h1 style="color: #2e7d32; font-size: 28px;">便利屋スタイル</h1>
-    <p style="font-size: 18px; color: #333; margin-top: 20px;">前橋市・高崎市の身の回りのお困りごと解決！</p>
-    <div style="margin-top: 30px; background: #06c755; color: white; padding: 15px; border-radius: 8px; font-weight: bold;">
-        💬 LINEでお手軽無料相談
+<body>
+
+    <header>
+        <div class="container header-content">
+            <div class="logo">便利屋スタイル</div>
+            <div class="area-tag">前橋・高崎 対応</div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h1>前橋市・高崎市の<br>「困った」を親身に解決！</h1>
+            <p>草刈り1作業から、お部屋のお片付け・家具移動まで。<br>地域密着でフットワーク軽く伺います。</p>
+            <div class="hero-badges">
+                <span class="badge">✓ お見積もり無料</span>
+                <span class="badge">✓ 即日・迅速対応</span>
+                <span class="badge">✓ 明朗会計</span>
+            </div>
+            <div class="cta-box">
+                <a href="https://line.me" class="btn-line" target="_blank" rel="noopener">
+                    💬 LINEでお手軽無料相談
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section class="features">
+        <div class="container">
+            <h2 class="section-title">選ばれる3つの理由</h2>
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <h3><span>01</span> 地域密着の丁寧な対応</h3>
+                    <p>前橋市・高崎市を中心に活動しているため、小回りが利いた迅速な対応が可能です。一人暮らしのご高齢者やお忙しいご家族に寄り添います。</p>
+                </div>
+                <div class="feature-card">
+                    <h3><span>02</span> 明朗会計で安心</h3>
+                    <p>作業前に必ず丁寧なお見積もりを提示いたします。追加料金の心配なく、安心してご依頼いただけます。</p>
+                </div>
+                <div class="feature-card">
+                    <h3><span>03</span> 小さな「困った」大歓迎</h3>
+                    <p>「電球1個の交換」「家具を1個だけ移動してほしい」など、どこに頼めばいいかわからない作業も喜んで引き受けます。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="services">
+        <div class="container">
+            <h2 class="section-title">サービス内容</h2>
+            <div class="service-list">
+                <div class="service-item">
+                    <div class="service-icon">🌱</div>
+                    <h3>草刈り・除草</h3>
+                    <p>お庭や空き地の草刈り・落ち葉の処分</p>
+                </div>
+                <div class="service-item">
+                    <div class="service-icon">🚚</div>
+                    <h3>家具移動・移動補助</h3>
+                    <p>模様替えや室内での重量物移動</p>
+                </div>
+                <div class="service-item">
+                    <div class="service-icon">🧹</div>
+                    <h3>お掃除・エアコン清掃</h3>
+                    <p>窓拭きやエアコン・水回り清掃</p>
+                </div>
+                <div class="service-item">
+                    <div class="service-icon">🔧</div>
+                    <h3>水栓交換・小修繕</h3>
+                    <p>シングルレバー水栓の交換や電球交換</p>
+                </div>
+                <div class="service-item">
+                    <div class="service-icon">📦</div>
+                    <h3>生前整理・遺品整理</h3>
+                    <p>お部屋の整理整頓・片付け作業の補佐</p>
+                </div>
+                <div class="service-item">
+                    <div class="service-icon">🏢</div>
+                    <h3>アパート共用部清掃</h3>
+                    <p>オーナー様・管理会社様向け定期清掃</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="pricing">
+        <div class="container">
+            <h2 class="section-title">料金の目安</h2>
+            <table class="pricing-table">
+                <thead>
+                    <tr>
+                        <th>作業内容</th>
+                        <th>目安料金（税込）</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>基本作業料金（1名/1時間）</td>
+                        <td>3,300円〜</td>
+                    </tr>
+                    <tr>
+                        <td>草刈り・除草作業</td>
+                        <td>5,500円〜</td>
+                    </tr>
+                    <tr>
+                        <td>家具移動（室内）</td>
+                        <td>3,300円〜</td>
+                    </tr>
+                    <tr>
+                        <td>水栓金具交換作業</td>
+                        <td>8,800円〜 + 部品代</td>
+                    </tr>
+                    <tr>
+                        <td>エアコン簡易清掃</td>
+                        <td>8,800円〜</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p class="price-note">※出張費・資材処分費が別途かかる場合がございます。まずは無料見積もりをご利用ください。</p>
+        </div>
+    </section>
+
+    <section class="area">
+        <div class="container">
+            <div class="area-box">
+                <h3>対応エリア</h3>
+                <p><strong>群馬県前橋市・高崎市</strong></p>
+                <p style="font-size: 0.85rem; margin-top: 4px; color: #666666;">※周辺地域につきましてもお気軽にご相談ください。</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p style="font-weight: bold; margin-bottom: 4px;">便利屋スタイル</p>
+            <p>代表：鈴木直人</p>
+            <p>所在地：群馬県前橋市箱田町1243オリオンビレッヂA202</p>
+            <p style="margin-top: 16px; opacity: 0.7;">&copy; 2026 便利屋スタイル All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <div class="fixed-cta">
+        <div class="container" style="padding: 0;">
+            <a href="https://line.me" class="btn-line" target="_blank" rel="noopener">
+                💬 LINEで気軽に無料相談・お見積もり
+            </a>
+        </div>
     </div>
+
 </body>
 </html>

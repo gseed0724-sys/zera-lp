@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>便利屋スタイル | 前橋市・高崎市の身の回りのお困りごと解決</title>
+    <style>
+        :root {
+            --primary-color: #2e7d32;
+            --accent-color: #ff9800;
+            --line-color: #06c755;
+            --bg-light: #f8f9fa;
+            --text-color: #333333;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; line-height: 1.6; color: var(--text-color); background-color: #fff; }
+        .hero { background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), #2e7d32; color: white; text-align: center; padding: 50px 20px; }
+        .hero h1 { font-size: 24px; margin-bottom: 10px; }
+        .hero p { font-size: 16px; margin-bottom: 20px; }
+        .btn-line { display: inline-block; background-color: var(--line-color); color: white; text-decoration: none; padding: 15px 30px; font-weight: bold; border-radius: 30px; font-size: 18px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+        .container { max-width: 800px; margin: 0 auto; padding: 30px 20px; }
+        .section-title { font-size: 20px; text-align: center; margin-bottom: 20px; color: var(--primary-color); border-bottom: 2px solid var(--primary-color); padding-bottom: 5px; }
+        .services { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px; margin-bottom: 30px; }
+        .service-card { border: 1px solid #ddd; padding: 15px; border-radius: 8px; background: var(--bg-light); }
+        .service-card h3 { color: var(--primary-color); margin-bottom: 5px; }
+        .price-box { background: #fff3e0; border: 2px solid var(--accent-color); border-radius: 8px; padding: 20px; text-align: center; margin-bottom: 30px; }
+        .price-box h3 { color: #e65100; margin-bottom: 10px; }
+        .price { font-size: 24px; font-weight: bold; color: #e65100; }
+        .footer { text-align: center; padding: 20px; background: #333; color: white; font-size: 12px; }
+    </style>
+</head>
+<body>
+    <header class="hero">
+        <h1>便利屋スタイル</h1>
+        <p>前橋市・高崎市の身の回りのお困りごと、すぐ解決！</p>
+        <a href="https://line.me" class="btn-line">LINEで無料相談・見積もり</a>
+    </header>
+
+    <div class="container">
+        <h2 class="section-title">こんなお困りごとはありませんか？</h2>
+        <div class="services">
+            <div class="service-card">
+                <h3>草むしり・お庭の手入れ</h3>
+                <p>伸び切った雑草の除去や定期的なお庭の管理を承ります。</p>
+            </div>
+            <div class="service-card">
+                <h3>家具移動・不用品整理</h3>
+                <p>重い家具の移動や、お部屋のお片付けをお手伝いします。</p>
+            </div>
+            <div class="service-card">
+                <h3>電球交換・小修理</h3>
+                <p>高所の電球交換や水回りのちょっとしたトラブルに対応。</p>
+            </div>
+            <div class="service-card">
+                <h3>エアコン・窓掃除</h3>
+                <p>手の届かない場所のお掃除もピカピカに仕上げます。</p>
+            </div>
+        </div>
+
+        <div class="price-box">
+            <h3>安心の分かりやすい料金体系</h3>
+            <p class="price">作業費 1時間 3,000円〜 (+出張費)</p>
+            <p>※お見積もり後の追加料金は一切ありません！</p>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <p>便利屋スタイル | 群馬県前橋市箱田町1243オリオンビレッヂA202</p>
+        <p>&copy; 便利屋スタイル All Rights Reserved.</p>
+    </footer>
+</body>
+</html>
